@@ -1,15 +1,20 @@
 # createContent
 
+[![Build Status](https://travis-ci.com/ungap/create-content.svg?branch=master)](https://travis-ci.com/ungap/create-content) [![Coverage Status](https://coveralls.io/repos/github/ungap/create-content/badge.svg?branch=master)](https://coveralls.io/github/ungap/create-content?branch=master) ![WebReflection status](https://offline.report/status/webreflection.svg)
+
 A cross browser utility to create HTML or SVG runtime content, an lightweight alternative to what a [HTMLTemplateElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement) polyfill could do.
+
+  * CDN global utility via https://unpkg.com/@ungap/create-content
+  * ESM via `import createContent from '@ungap/create-content'`
+  * CJS via `const createContent = require('@ungap/create-content')`
+
+
+### Example
 
 ```js
 // createContent(markup[, type = 'html'])
 const htmlContent = createContent('<td>any content</td>');
 const svgContent = createContent('<rect x=1 y=2 />', 'svg');
 ```
-
-  * CDN global utility via https://unpkg.com/@ungap/create-content
-  * ESM via `import Map from '@ungap/create-content'`
-  * CJS via `const Map = require('@ungap/create-content')`
 
 [Live test](https://ungap.github.io/create-content/test/)
