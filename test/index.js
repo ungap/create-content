@@ -15,6 +15,8 @@ function test() {
   var content = createContent('<p>test</p>');
   var child = content.childNodes[0];
   console.assert(child.nodeName.toLowerCase() === 'p' && child.textContent === 'test');
+  content = createContent('<p>a</p><p>b</p>');
+  console.assert(content.childNodes.length === 2 && content.childNodes[1].textContent === 'b');
   content = createContent('<td>test</td>');
   child = content.childNodes[0];
   console.assert(child.nodeName.toLowerCase() === 'td' && child.textContent === 'test');
