@@ -18,7 +18,7 @@ function test() {
   content = createContent('<td>test</td>');
   child = content.childNodes[0];
   console.assert(child.nodeName.toLowerCase() === 'td' && child.textContent === 'test');
-  content = createContent('<rect>test</rect>', 'svg');
+  content = createContent('<rect x=1 y=2 />', 'svg');
   child = content.childNodes[0];
-  console.assert(child.nodeName.toLowerCase() === 'rect' && child.textContent === 'test');
+  console.assert(child.nodeName.toLowerCase() === 'rect' && child.getAttribute('x') == 1);
 }
