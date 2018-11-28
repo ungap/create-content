@@ -1,5 +1,5 @@
 /*! (c) Andrea Giammarchi - ISC */
-var createContent = (function (document, forEach) {'use strict';
+var createContent = (function (document) {'use strict';
   var FRAGMENT = 'fragment';
   var TEMPLATE = 'template';
   var HAS_CONTENT = 'content' in create(TEMPLATE);
@@ -22,7 +22,7 @@ var createContent = (function (document, forEach) {'use strict';
         template.innerHTML = html;
         childNodes = template.childNodes;
       }
-      forEach.call(childNodes, append, content);
+      append(content, childNodes);
       return content;
     };
 
@@ -30,8 +30,10 @@ var createContent = (function (document, forEach) {'use strict';
     return (type === 'svg' ? createSVG : createHTML)(markup);
   };
 
-  function append(child) {
-    this.appendChild(child);
+  function append(root, childNodes) {
+    var length = childNodes.length;
+    while (length--)
+      root.appendChild(childNodes[0]);
   }
 
   function create(element) {
@@ -47,9 +49,9 @@ var createContent = (function (document, forEach) {'use strict';
     var content = create(FRAGMENT);
     var template = create('div');
     template.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg">' + svg + '</svg>';
-    forEach.call(template.firstChild.childNodes, append, content);
+    append(content, template.firstChild.childNodes);
     return content;
   }
 
-}(document, [].forEach));
+}(document));
 module.exports = createContent;
