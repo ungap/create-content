@@ -27,7 +27,7 @@ var createContent = (function (document) {'use strict';
     };
 
   return function createContent(markup, type) {
-    return (type == 'svg' ? createSVG : createHTML)(markup);
+    return (type === 'svg' ? createSVG : createHTML)(markup);
   };
 
   function append(root, childNodes) {
