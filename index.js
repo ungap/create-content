@@ -39,7 +39,7 @@ var createContent = (function (document) {'use strict';
   function create(element) {
     return element === FRAGMENT ?
       document.createDocumentFragment() :
-      document.createElement(element);
+      document.createElementNS('http://www.w3.org/1999/xhtml', element);
   }
 
   // it could use createElementNS when hasNode is there
