@@ -1,6 +1,6 @@
 {
   "name": "@ungap/create-content",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A cross browser utility to create HTML or SVG runtime content",
   "main": "cjs/index.js",
   "module": "esm/index.js",
