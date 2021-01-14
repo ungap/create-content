@@ -24,4 +24,6 @@ function test() {
   child = content.childNodes[0];
   console.assert(child.nodeName.toLowerCase() === 'rect' && child.getAttribute('x') == 1);
   console.assert(content.childNodes.length == 2);
+  content = createContent('<ul>\n  <li>a</li>\n  <li>b</li></ul>', 'html', true);
+  console.assert(content.childNodes[0].innerHTML === '<li>a</li><li>b</li>');
 }

@@ -12,7 +12,7 @@ A cross browser utility to create HTML or SVG runtime content, as lightweight al
 ### Example
 
 ```js
-// createContent(markup[, type = 'html'])
+// createContent(markup[, type = 'html'[, normalize = false]])
 const htmlContent = createContent('<td>any content</td>');
 const svgContent = createContent('<rect x=1 y=2 />', 'svg');
 ```
